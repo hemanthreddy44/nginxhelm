@@ -23,7 +23,11 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}
+podAnnotations: 
+        argocd-image-updater.argoproj.io/demo7.helm.image-name: demo7.image.name
+        argocd-image-updater.argoproj.io/demo7.helm.image-tag: demo7.image.tag
+        argocd-image-updater.argoproj.io/image-list: demo7=hemanthhr/nginx-hello
+        argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argo-secret
 
 podSecurityContext: {}
   # fsGroup: 2000
