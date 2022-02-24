@@ -24,10 +24,10 @@ serviceAccount:
   name: ""
 
 podAnnotations: 
-        argocd-image-updater.argoproj.io/demo7.helm.image-name: demo7.image.name
-        argocd-image-updater.argoproj.io/demo7.helm.image-tag: demo7.image.tag
-        argocd-image-updater.argoproj.io/image-list: demo7=hemanthhr/nginx-hello
-        argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argo-secret
+        # argocd-image-updater.argoproj.io/demo7.helm.image-name: demo7.image.name
+        #argocd-image-updater.argoproj.io/demo7.helm.image-tag: demo7.image.tag
+        #argocd-image-updater.argoproj.io/image-list: demo7=hemanthhr/nginx-hello
+        # argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argo-secret
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -41,8 +41,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
-  port: 80
+  type: NodePort
+  port: 34000
 
 ingress:
   enabled: false
